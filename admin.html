@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin - Pramuka KHD</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen font-sans dark:bg-gray-900 dark:text-gray-200">
+
+  <div class="max-w-4xl mx-auto p-6">
+    <div class="bg-white rounded-2xl shadow-xl p-8 dark:bg-gray-800">
+      <div class="flex justify-between items-center mb-8">
+        <h1 class="text-3xl font-bold text-maroon dark:text-gold">Admin Panel</h1>
+        <a href="index.html" class="bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition dark:bg-gray-600 dark:hover:bg-gray-700">
+          Kembali ke Situs
+        </a>
+      </div>
+
+      <!-- Login -->
+      <div id="loginCard">
+        <h2 class="text-2xl font-bold mb-6 dark:text-gray-200">Login Admin</h2>
+        <form id="loginForm" class="space-y-4">
+          <input type="text" id="username" placeholder="Username" required class="w-full p-3 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:placeholder-gray-400">
+          <input type="password" id="password" placeholder="Password" required class="w-full p-3 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:placeholder-gray-400">
+          <button type="submit" class="w-full bg-maroon text-white py-3 rounded-lg font-bold hover:bg-maroon/90 transition dark:bg-gold dark:text-maroon dark:hover:bg-gold/90">Login</button>
+        </form>
+      </div>
+
+      <!-- Dashboard -->
+      <div id="dashboard" class="hidden space-y-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4 dark:text-gray-200">Upload Gambar ke Album</h3>
+          <select id="albumSelect" class="mb-3 p-2 border rounded-lg w-full dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200">
+            <option value="perkemahan">Perkemahan</option>
+            <option value="lomba">Lomba Pramuka</option>
+            <option value="pelantikan">Pelantikan</option>
+            <option value="kegiatan-sosial">Kegiatan Sosial</option>
+            <option value="latgab">Latihan Gabungan</option>
+            <option value="upacara">Upacara Bendera</option>
+            <option value="hari-besar">Hari Besar Nasional</option>
+            <option value="kreativitas">Kreativitas Anggota</option>
+            <option value="lainnya">Lainnya</option>
+          </select>
+          <input type="file" id="fileInput" multiple accept="image/*" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-maroon file:text-white hover:file:bg-maroon/90 dark:file:bg-gold dark:file:text-maroon dark:hover:file:bg-gold/90 dark:text-gray-300">
+          <button id="uploadBtn" onclick="uploadFiles()" class="mt-3 bg-gold text-maroon px-6 py-2 rounded-full font-bold hover:bg-gold/90 transition dark:bg-maroon dark:text-white dark:hover:bg-maroon/90">
+  Upload
+</button>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold mb-4 dark:text-gray-200">Daftar Gambar</h3>
+          <div id="imageList" class="grid grid-cols-2 md:grid-cols-3 gap-4"></div>
+        </div>
+
+        <button onclick="logout()" class="bg-red-600 text-white px-6 py-2 rounded-full font-bold hover:bg-red-700 transition">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
